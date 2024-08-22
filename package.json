@@ -1,0 +1,10 @@
+{
+  "name": "hackerpack",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "mprocs -c mprocs.yml"
+  },
+  "dependencies": {
+    "mprocs": "^0.7.1"
+  }
+}

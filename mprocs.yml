@@ -1,0 +1,7 @@
+procs:
+  mru:
+    cmd: ["npm", "start"]
+    cwd: ./counter
+  frontend:
+    cmd: ["npm", "run", "dev"]
+    cwd: ./web
