@@ -10,9 +10,9 @@
 
 🛠️ Built using Stackr's SDK, NextJS, Privy, Wagmi and Viem.
 
-- :thought_balloon: **Opinionated APIs**: The included micro-rollup has a server exposed with some opinionated endpoints to get started easily.
-- :hook: **Frontend hooks**: Hooks that makes it breezy to submit actions to Micro-rollup.
-- :closed_lock_with_key: **Embedded Wallet**: We have pre-configured Privy in this example, that can be easily extended to support in-browser wallets as wells as Embedded wallets linked to other identity providers.
+- 💭 **Opinionated APIs**: The included micro-rollup has a server exposed with some opinionated endpoints to get started easily.
+- 🪝 **Frontend hooks**: Hooks that makes it breezy to submit actions to Micro-rollup.
+- 🔐 **Embedded Wallet**: We have pre-configured Privy in this example, that can be easily extended to support in-browser wallets as wells as Embedded wallets linked to other identity providers.
 
 ## Wallet Setups ⚙️
 
@@ -36,38 +36,36 @@ Below are the requirements to get started with the pack:
 To quickly get started, you can clone this repository and follow the steps below:
 
 ```bash
-npm i
 
-# Update the .env file with your own values
-cd web
-cp .env.example .env
-npm i
+# this will install all the dependencies and setup the project
+./setup.sh # One time setup
 
-# Update Micro-rollup .env file with your own values
-cd ../counter
-cp .env.example .env
-npm i
+# Change values in web/.env and counter/.env to your own values, or start with default if you are just testing.
 
-cd ..
+## For starting hackerpack
 npm run dev # this start `mprocs` session for both FE and BE
 # OR 
-# you can start them separately using the below commands
+# you can start them separately using the below commands:
+cd web && npm run dev # this starts the NextJS server
+cd counter && npm start # this starts the micro-rollup server
 
 # By Default
 # Rollup starts on port 3210
 # NextJS starts on port 3000
 ```
 
-## Documentation :book:
+## Documentation 📕
 
 Checkout our [docs](https://docs.stf.xyz) to learn more about Micro-rollups, the Stackr ecosystem, and how to get started with new era of decentralized applications.
 
-## Hosting
+## Hosting ☁️
 
 - Frontend: You can deploy the NextJS application to Vercel, Netify, [GitHub Pages](https://www.freecodecamp.org/news/how-to-deploy-next-js-app-to-github-pages/) or even other providers like [AWS Amplify](https://aws.amazon.com/amplify/) etc.
 
 - Micro-rollup: We have extensive guide [here](https://docs.stf.xyz/build/guides/hosting)
 
-## More Micro-rollups
+## More Micro-rollups 🤝
 
 Refer to the [awesome-micro-rollups](https://github.com/aashutoshrathi/awesome-micro-rollups) for a curated list of applications leveraging Micro-rollups.
+
+For more information, you can reach out to us on our [Discord](https://discord.stackrlabs.xyz/).
