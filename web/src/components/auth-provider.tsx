@@ -19,15 +19,10 @@ export default function Providers({ children }: { children: React.ReactNode }) {
           accentColor: "#676FFF",
           logo: "https://assets.stackrlabs.xyz/counter.png",
         },
-        externalWallets: {
-          coinbaseWallet: {
-            connectionOptions: "all",
-          },
-        },
         embeddedWallets: {
           createOnLogin: "all-users",
         },
-        loginMethods: ["wallet"],
+        loginMethods: ["email", "farcaster"],
         defaultChain: sepolia,
         supportedChains: [sepolia],
       }}

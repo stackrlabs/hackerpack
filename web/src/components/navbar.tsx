@@ -1,6 +1,6 @@
 "use client";
 import { formatHash } from "@/lib/utils";
-import { usePrivy, WalletWithMetadata } from "@privy-io/react-auth";
+import { usePrivy } from "@privy-io/react-auth";
 import { LogOut } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,7 +9,26 @@ import { Button } from "./ui/button";
 export const Navbar = () => {
   const { user, logout } = usePrivy();
 
-  const wallets = user?.linkedAccounts as WalletWithMetadata[];
+  const { wallet, email, farcaster } = user || {};
+
+  const renderSocialInfo = () => {
+    if (farcaster) {
+      return (
+        <Link
+          className="underline hover:text-gray-600"
+          href={`https://warpcast.com/${farcaster.username}`}
+          target="_blank"
+        >
+          @{farcaster.username}
+        </Link>
+      );
+    }
+
+    if (email) {
+      return <div>{email.address}</div>;
+    }
+  };
+
   return (
     <div className="flex items-center justify-between flex-wrap p-6 px-4 m-auto w-full">
       <Link
@@ -25,14 +44,15 @@ export const Navbar = () => {
         Counter
       </Link>
       <div className="flex gap-4 place-items-center">
-        {!!wallets?.length && (
+        {!!wallet && (
           <div className="flex gap-4 items-center">
-            <div className="flex flex-col font-mono">
-              {wallets.map((a) => (
-                <div key={a.connectorType}>
-                  <b>{a.connectorType}</b>: {formatHash(a.address)}
+            <div className="flex gap-2">
+              <div className="flex flex-col">
+                {renderSocialInfo()}
+                <div>
+                  <b>Wallet:</b> {formatHash(wallet?.address || "...")}
                 </div>
-              ))}
+              </div>
             </div>
             <Button onClick={logout} variant="outline" size="icon">
               <LogOut />
