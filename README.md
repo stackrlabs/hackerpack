@@ -31,10 +31,12 @@ npm i
 # Update the .env file with your own values
 cd web
 cp .env.example .env
+npm i
 
 # Update Micro-rollup .env file with your own values
 cd ../counter
 cp .env.example .env
+npm i
 
 cd ..
 npm run dev # this start mprocs session for both FE and BE
