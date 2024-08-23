@@ -2,6 +2,7 @@
 
 <h4 align="center">
   <a href="https://docs.stf.xyz">Docs</a> |
+  <a href="https://github.com/stackrlabs/hackerpack">GitHub</a> |
   <a href="https://stackrlabs.xyz">Website</a>
 </h4>
 
@@ -18,9 +19,9 @@
 This repo has been setup with [Privy](https://www.privy.io/), and we have included three modes of wallet setups:
 | Mode | Description | Branch | Deployment |
 | --- | --- | --- | --- |
-| Embedded Wallet with Custodial wallet Auth | Uses Privy's embedded wallet to sign transactions (signing pop-up can be suppressed) | [`main`](https://github.com/stackrlabs/hackerpack/) | [Try it](https://main.d3vu12gydll85x.amplifyapp.com) |
-| Embedded Wallet with Social/Email Auth | Uses Privy's embedded wallet to sign transactions (signing pop-up can be suppressed) | [`social`](https://github.com/stackrlabs/hackerpack/tree/social) | [Try it](https://social.d3vu12gydll85x.amplifyapp.com) |
-| Using Custodial wallet | Uses your wallet to sign transactions (requires pop-up) | [`custodial`](https://github.com/stackrlabs/hackerpack/tree/custodial) | [Try it](https://custodial.d3vu12gydll85x.amplifyapp.com) |
+| Embedded Wallet with Custodial wallet Auth | Uses Privy's embedded wallet to sign transactions (signing pop-up can be suppressed) | [`main`](https://github.com/stackrlabs/hackerpack/) | [Try it](https://main.hackerpack.stf.xyz) |
+| Embedded Wallet with Social/Email Auth | Uses Privy's embedded wallet to sign transactions (signing pop-up can be suppressed) | [`social`](https://github.com/stackrlabs/hackerpack/tree/social) | [Try it](https://social.hackerpack.stf.xyz) |
+| Using Custodial wallet | Uses your wallet to sign transactions (requires pop-up) | [`custodial`](https://github.com/stackrlabs/hackerpack/tree/custodial) | [Try it](https://custodial.hackerpack.stf.xyz) |
 
 ## Requirements
 
