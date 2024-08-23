@@ -15,7 +15,7 @@ export interface Domain {
   version: string;
   chainId: number;
   verifyingContract: `0x${string}`;
-  salt: ArrayBuffer;
+  salt: `0x${string}`;
 }
 
 export interface MRUInfo {
