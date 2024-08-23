@@ -63,11 +63,36 @@ Checkout our [docs](https://docs.stf.xyz) to learn more about Micro-rollups, the
 ## Wallet Setups ⚙️
 
 This repo has been setup with [Privy](https://www.privy.io/), and we have included three modes of wallet setups:
-| Mode | Description | Branch | Deployment |
-| --- | --- | --- | --- |
-| Embedded Wallet with Custodial wallet Auth | Uses Privy's embedded wallet to sign transactions (signing pop-up can be suppressed) | [`main`](https://github.com/stackrlabs/hackerpack/) | [Try it](https://main.hackerpack.stf.xyz) |
-| Embedded Wallet with Social/Email Auth | Uses Privy's embedded wallet to sign transactions (signing pop-up can be suppressed) | [`social`](https://github.com/stackrlabs/hackerpack/tree/social) | [Try it](https://social.hackerpack.stf.xyz) |
-| Using Custodial wallet | Uses your wallet to sign transactions (requires pop-up) | [`custodial`](https://github.com/stackrlabs/hackerpack/tree/custodial) | [Try it](https://custodial.hackerpack.stf.xyz) |
+<table>
+  <thead>
+    <tr>
+      <th>Mode</th>
+      <th>Description</th>
+      <th>Branch</th>
+      <th>Deployment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Embedded Wallet with Custodial wallet Auth</td>
+      <td>Uses Privy's embedded wallet to sign transactions (signing pop-up can be suppressed)</td>
+      <td><a href="https://github.com/stackrlabs/hackerpack/">main</a></td>
+      <td><a href="https://main.hackerpack.stf.xyz">Try it</a></td>
+    </tr>
+    <tr>
+      <td>Embedded Wallet with Social/Email Auth</td>
+      <td>Uses Privy's embedded wallet to sign transactions (signing pop-up can be suppressed)</td>
+      <td><a href="https://github.com/stackrlabs/hackerpack/tree/social">social</a></td>
+      <td><a href="https://social.hackerpack.stf.xyz">Try it</a></td>
+    </tr>
+    <tr>
+      <td>Using Custodial wallet</td>
+      <td>Uses your wallet to sign transactions (requires pop-up)</td>
+      <td><a href="https://github.com/stackrlabs/hackerpack/tree/custodial">custodial</a></td>
+      <td><a href="https://custodial.hackerpack.stf.xyz">Try it</a></td>
+    </tr>
+  </tbody>
+</table>
 
 ## Hosting ☁️
 
