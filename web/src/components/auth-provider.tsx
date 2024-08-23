@@ -24,9 +24,6 @@ export default function Providers({ children }: { children: React.ReactNode }) {
             connectionOptions: "all",
           },
         },
-        embeddedWallets: {
-          createOnLogin: "all-users",
-        },
         loginMethods: ["wallet"],
         defaultChain: sepolia,
         supportedChains: [sepolia],

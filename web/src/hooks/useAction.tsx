@@ -1,34 +1,46 @@
 import { useLogs } from "@/context/logs.context";
 import { LOG_TYPE } from "@/lib/constants";
-import { usePrivy } from "@privy-io/react-auth";
+import { getAddress } from "viem";
+import { useAccount, useSignTypedData } from "wagmi";
 import { submitAction } from "../api/api";
 import { useMruInfo } from "./useMruInfo";
 
 export const useAction = () => {
-  const { user, signTypedData } = usePrivy();
+  const { address } = useAccount();
+  const { signTypedDataAsync } = useSignTypedData();
   const { mruInfo } = useMruInfo();
   const { addLog } = useLogs();
 
+  if (!address) {
+    return { submit: () => Promise.resolve() };
+  }
+
   const submit = async (name: string, payload: any) => {
-    if (!mruInfo || !user?.wallet) {
+    if (!mruInfo) {
       return;
     }
 
     const inputs = { ...payload };
     const { domain, schemas } = mruInfo;
-    const msgSender = user.wallet.address;
+    // To get correct checksum address
+    const msgSender = getAddress(address);
 
     const schema = schemas[name];
 
-    const signature = await signTypedData({
-      domain,
-      types: schema.types,
-      primaryType: schema.primaryType,
-      message: {
-        name,
-        inputs,
-      },
-    });
+    let signature;
+    try {
+      signature = await signTypedDataAsync({
+        domain,
+        primaryType: schema.primaryType,
+        types: schema.types,
+        message: { name, inputs },
+        account: msgSender,
+      });
+    } catch (e) {
+      console.error("Error signing message", e);
+      alert("Error while signing message, check console for more details");
+      return;
+    }
 
     addLog({
       type: LOG_TYPE.REQUEST,
@@ -43,7 +55,7 @@ export const useAction = () => {
       const response = await submitAction(name, {
         msgSender,
         signature,
-        inputs
+        inputs,
       });
 
       addLog({
