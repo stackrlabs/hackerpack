@@ -1,6 +1,7 @@
 "use client";
 
 import { getState } from "@/api/api";
+import { ActionLogs } from "@/components/action-logs";
 import { Button } from "@/components/ui/button";
 import { useAction } from "@/hooks/useAction";
 import { usePrivy } from "@privy-io/react-auth";
@@ -82,12 +83,7 @@ export default function Home() {
         </p>
         <div className="flex gap-4">{renderBody()}</div>
       </div>
-
-      <div className="flex-1 bg-black h-full text-white rounded-sm p-2">
-        <p className="text-lg p-2">Action Logs</p>
-        <hr />
-        {/* TODO */}
-      </div>
+      <ActionLogs />
     </main>
   );
 }

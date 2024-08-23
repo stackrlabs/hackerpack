@@ -32,6 +32,7 @@ export async function setupServer() {
   /** Routes */
   app.get("/info", (_req: Request, res: Response) => {
     res.send({
+      isSandbox: config.isSandbox,
       domain: config.domain,
       transitionToSchema,
       schemas: Object.values(schemas).reduce((acc, schema) => {

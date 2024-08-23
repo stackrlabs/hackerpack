@@ -20,3 +20,10 @@ export enum DA {
   CELESTIA = "celestia",
   EIGEN = "eigen",
 }
+
+export enum LOG_TYPE {
+  REQUEST = "request",
+  C0_RESPONSE = "c0 response",
+  C1_RESPONSE = "c1 response",
+  ERROR = "error",
+}

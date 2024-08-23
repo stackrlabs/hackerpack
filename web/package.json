@@ -12,6 +12,7 @@
     "@privy-io/react-auth": "^1.80.0",
     "@privy-io/wagmi": "^0.2.12",
     "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-tooltip": "^1.1.2",
     "@tanstack/react-query": "^5.51.21",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
