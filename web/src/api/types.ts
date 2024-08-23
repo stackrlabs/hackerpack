@@ -19,7 +19,7 @@ export interface Domain {
 }
 
 export interface MRUInfo {
-  signingInstructions: string;
+  isSandbox: boolean;
   domain: Domain;
   transitionToSchema: Record<string, string>;
   schemas: {
