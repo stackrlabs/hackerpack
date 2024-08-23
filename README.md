@@ -41,7 +41,7 @@ git clone git@github.com:stackrlabs/hackerpack.git
 3. Run the project with `mprocs`
 
 ```bash
-bun run dev
+bun dev
 ```
 
 This sets up the micro-rollup and the web app to run concurrently. You can now visit `http://localhost:3000` to see the web app in action and interact with the rollup by sending actions.
