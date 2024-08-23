@@ -7,7 +7,7 @@ import { usePrivy } from "@privy-io/react-auth";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const { ready, authenticated } = usePrivy();
+  const { ready, authenticated, login } = usePrivy();
   const [fetching, setFetching] = useState(true);
   const [value, setValue] = useState<number>(0);
   const [submitting, setSubmitting] = useState(false);
@@ -52,7 +52,7 @@ export default function Home() {
     }
 
     if (!authenticated) {
-      return <p>Login to interact</p>;
+      return <Button onClick={login}>Connect Wallet</Button>;
     }
 
     return (
@@ -84,7 +84,8 @@ export default function Home() {
       </div>
 
       <div className="flex-1 bg-black h-full text-white rounded-sm p-2">
-        Action Logs Stream
+        <p className="text-lg p-2">Action Logs</p>
+        <hr />
         {/* TODO */}
       </div>
     </main>

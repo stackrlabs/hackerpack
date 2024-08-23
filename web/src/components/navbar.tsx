@@ -6,19 +6,24 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 
 export const Navbar = () => {
-  const { ready, authenticated, user, logout, login } = usePrivy();
-  const disableLogin = !ready || (ready && authenticated);
+  const { user, logout } = usePrivy();
 
   const walletAddress = (user?.linkedAccounts as WalletWithMetadata[])?.find(
     (a) => a.connectorType !== "embedded"
   )?.address;
 
   return (
-    <div className="flex justify-between flex-wrap p-6 px-4 m-auto w-full">
+    <div className="flex items-center justify-between flex-wrap p-6 px-4 m-auto w-full">
       <Link
         href={"/"}
-        className="text-4xl font-bold select-none cursor-pointer"
+        className="flex gap-2 text-3xl font-bold select-none cursor-pointer"
       >
+        <img
+          src="https://assets.stackrlabs.xyz/counter.png"
+          width={40}
+          height={40}
+          alt="Counter"
+        />
         Counter
       </Link>
       <div className="flex gap-4 place-items-center">
@@ -31,11 +36,6 @@ export const Navbar = () => {
               <LogOut />
             </Button>
           </div>
-        )}
-        {ready && !authenticated && (
-          <Button onClick={login} disabled={disableLogin}>
-            Connect Wallet
-          </Button>
         )}
       </div>
     </div>
