@@ -16,11 +16,11 @@
 ## Wallet Setups ⚙️
 
 This repo has been setup with [Privy](https://www.privy.io/), and we have included three modes of wallet setups:
-| Mode | Description | Code Branch |
-| --- | --- | --- |
-| Embedded Wallet with Custodial wallet Auth | Uses Privy's embedded wallet to sign transactions (signing pop-up can be suppressed) | [`main`](https://github.com/stackrlabs/hackerpack/) |
-| Embedded Wallet with Social/Email Auth | Uses Privy's embedded wallet to sign transactions (signing pop-up can be suppressed) | [`social`](https://github.com/stackrlabs/hackerpack/tree/social) |
-| Using Custodial wallet | Uses your wallet to sign transactions (requires pop-up) | [`custodial`](https://github.com/stackrlabs/hackerpack/tree/custodial) |
+| Mode | Description | Branch | Deployment |
+| --- | --- | --- | --- |
+| Embedded Wallet with Custodial wallet Auth | Uses Privy's embedded wallet to sign transactions (signing pop-up can be suppressed) | [`main`](https://github.com/stackrlabs/hackerpack/) | [Try it](https://main.d3vu12gydll85x.amplifyapp.com) |
+| Embedded Wallet with Social/Email Auth | Uses Privy's embedded wallet to sign transactions (signing pop-up can be suppressed) | [`social`](https://github.com/stackrlabs/hackerpack/tree/social) | [Try it](https://social.d3vu12gydll85x.amplifyapp.com) |
+| Using Custodial wallet | Uses your wallet to sign transactions (requires pop-up) | [`custodial`](https://github.com/stackrlabs/hackerpack/tree/custodial) | [Try it](https://custodial.d3vu12gydll85x.amplifyapp.com) |
 
 ## Requirements
 
