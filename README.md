@@ -61,6 +61,12 @@ npm run dev # this start `mprocs` session for both FE and BE
 
 Checkout our [docs](https://docs.stf.xyz) to learn more about Micro-rollups, the Stackr ecosystem, and how to get started with new era of decentralized applications.
 
+## Hosting
+
+- Frontend: You can deploy the NextJS application to Vercel, Netify, [GitHub Pages](https://www.freecodecamp.org/news/how-to-deploy-next-js-app-to-github-pages/) or even other providers like [AWS Amplify](https://aws.amazon.com/amplify/) etc.
+
+- Micro-rollup: We have extensive guide [here](https://docs.stf.xyz/build/guides/hosting)
+
 ## More Micro-rollups
 
 Refer to the [awesome-micro-rollups](https://github.com/aashutoshrathi/awesome-micro-rollups) for a curated list of applications leveraging Micro-rollups.
