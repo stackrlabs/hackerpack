@@ -14,15 +14,6 @@
 - 🪝 **Frontend hooks**: Hooks that makes it breezy to submit actions to Micro-rollup.
 - 🔐 **Embedded Wallet**: We have pre-configured Privy in this example, that can be easily extended to support in-browser wallets as wells as Embedded wallets linked to other identity providers.
 
-## Wallet Setups ⚙️
-
-This repo has been setup with [Privy](https://www.privy.io/), and we have included three modes of wallet setups:
-| Mode | Description | Branch | Deployment |
-| --- | --- | --- | --- |
-| Embedded Wallet with Custodial wallet Auth | Uses Privy's embedded wallet to sign transactions (signing pop-up can be suppressed) | [`main`](https://github.com/stackrlabs/hackerpack/) | [Try it](https://main.hackerpack.stf.xyz) |
-| Embedded Wallet with Social/Email Auth | Uses Privy's embedded wallet to sign transactions (signing pop-up can be suppressed) | [`social`](https://github.com/stackrlabs/hackerpack/tree/social) | [Try it](https://social.hackerpack.stf.xyz) |
-| Using Custodial wallet | Uses your wallet to sign transactions (requires pop-up) | [`custodial`](https://github.com/stackrlabs/hackerpack/tree/custodial) | [Try it](https://custodial.hackerpack.stf.xyz) |
-
 ## Requirements
 
 Below are the requirements to get started with the pack:
@@ -35,28 +26,45 @@ Below are the requirements to get started with the pack:
 
 To quickly get started, you can clone this repository and follow the steps below:
 
+1. Clone the repository
+
 ```bash
-
-# this will install all the dependencies and setup the project
-./setup.sh # One time setup
-
-# Change values in web/.env and counter/.env to your own values, or start with default if you are just testing.
-
-## For starting hackerpack
-npm run dev # this start `mprocs` session for both FE and BE
-# OR 
-# you can start them separately using the below commands:
-cd web && npm run dev # this starts the NextJS server
-cd counter && npm start # this starts the micro-rollup server
-
-# By Default
-# Rollup starts on port 3210
-# NextJS starts on port 3000
+git clone git@github.com:stackrlabs/hackerpack.git
 ```
+
+2. Initialize the project by running the setup script
+
+```bash
+./setup.sh
+```
+
+3. Run the project with `mprocs`
+
+```bash
+bun dev
+```
+
+This sets up the micro-rollup and the web app to run concurrently. You can now visit `http://localhost:3000` to see the web app in action and interact with the rollup by sending actions.
+
+By default
+Rollup runs on port `3210`
+Web App runs on port `3000`
+
+> [!CAUTION]
+> The project comes initialized with a default private key and privy appId. It is strongly recommended to replace these with your own values in `counter/.env` and `web/.env` files respectively before deploying your application.
 
 ## Documentation 📕
 
 Checkout our [docs](https://docs.stf.xyz) to learn more about Micro-rollups, the Stackr ecosystem, and how to get started with new era of decentralized applications.
+
+## Wallet Setups ⚙️
+
+This repo has been setup with [Privy](https://www.privy.io/), and we have included three modes of wallet setups:
+| Mode | Description | Branch | Deployment |
+| --- | --- | --- | --- |
+| Embedded Wallet with Custodial wallet Auth | Uses Privy's embedded wallet to sign transactions (signing pop-up can be suppressed) | [`main`](https://github.com/stackrlabs/hackerpack/) | [Try it](https://main.hackerpack.stf.xyz) |
+| Embedded Wallet with Social/Email Auth | Uses Privy's embedded wallet to sign transactions (signing pop-up can be suppressed) | [`social`](https://github.com/stackrlabs/hackerpack/tree/social) | [Try it](https://social.hackerpack.stf.xyz) |
+| Using Custodial wallet | Uses your wallet to sign transactions (requires pop-up) | [`custodial`](https://github.com/stackrlabs/hackerpack/tree/custodial) | [Try it](https://custodial.hackerpack.stf.xyz) |
 
 ## Hosting ☁️
 
