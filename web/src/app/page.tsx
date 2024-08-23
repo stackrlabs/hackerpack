@@ -52,7 +52,7 @@ export default function Home() {
     }
 
     if (!authenticated) {
-      return <Button onClick={login}>Connect Wallet</Button>;
+      return <Button onClick={login}>Connect Wallet to interact</Button>;
     }
 
     return (

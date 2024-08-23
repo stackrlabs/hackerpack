@@ -8,10 +8,7 @@ import { Button } from "./ui/button";
 export const Navbar = () => {
   const { user, logout } = usePrivy();
 
-  const walletAddress = (user?.linkedAccounts as WalletWithMetadata[])?.find(
-    (a) => a.connectorType !== "embedded"
-  )?.address;
-
+  const wallets = user?.linkedAccounts as WalletWithMetadata[];
   return (
     <div className="flex items-center justify-between flex-wrap p-6 px-4 m-auto w-full">
       <Link
@@ -27,11 +24,15 @@ export const Navbar = () => {
         Counter
       </Link>
       <div className="flex gap-4 place-items-center">
-        {!!walletAddress && (
+        {!!wallets?.length && (
           <div className="flex gap-4 items-center">
-            <p className="font-mono">
-              <b>AA Wallet:</b> {formatHash(user?.wallet?.address || "...")}
-            </p>
+            <div className="flex flex-col font-mono">
+              {wallets.map((a) => (
+                <div>
+                  <b>{a.connectorType}</b>: {formatHash(a.address)}
+                </div>
+              ))}
+            </div>
             <Button onClick={logout} variant="outline" size="icon">
               <LogOut />
             </Button>
