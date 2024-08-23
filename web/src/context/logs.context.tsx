@@ -13,13 +13,10 @@ const LogsContext = createContext<LogsContextType | undefined>(undefined);
 export const LogsProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [logs, setLogs] = useState<Log[]>(
-    JSON.parse(sessionStorage.getItem("logs") || "[]")
-  );
+  const [logs, setLogs] = useState<Log[]>([]);
 
   const addLog = (log: Log) => {
     setLogs((prevLogs) => [log, ...prevLogs]);
-    sessionStorage.setItem("logs", JSON.stringify(logs));
   };
 
   return (
