@@ -7,8 +7,15 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "counter",
+  title: "Counter",
   description: "Stackr Starter",
+  icons: [
+    {
+      rel: "icon",
+      type: "image/png",
+      url: "./icon.png",
+    },
+  ],
 };
 
 export default function RootLayout({
