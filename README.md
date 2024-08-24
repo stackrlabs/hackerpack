@@ -35,6 +35,7 @@ git clone git@github.com:stackrlabs/hackerpack.git
 2. Initialize the project by running the setup script
 
 ```bash
+cd hackerpack
 ./setup.sh
 ```
 
