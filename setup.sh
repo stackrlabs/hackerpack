@@ -1,4 +1,8 @@
 #!/bin/bash
+# Setup fresh git repo
+npx rimraf .git
+git init
+
 bun i
 
 cd web

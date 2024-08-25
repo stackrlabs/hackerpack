@@ -30,6 +30,8 @@ To quickly get started, you can clone this repository and follow the steps below
 
 ```bash
 git clone git@github.com:stackrlabs/hackerpack.git
+# OR if you want to clone particular branch, use command like below
+git clone -b <branch> git@github.com:stackrlabs/hackerpack.git
 ```
 
 2. Initialize the project by running the setup script
@@ -52,7 +54,7 @@ Rollup runs on port `3210`
 Web App runs on port `3000`
 
 > [!CAUTION]
-> The project comes initialized with a default private key and privy appId. It is strongly recommended to replace these with your own values in `counter/.env` and `web/.env` files respectively before deploying your application.
+> The project comes initialized with a default private key and Privy appId. It is strongly recommended to replace these with your own values in `counter/.env` and `web/.env` files respectively before deploying your application.
 
 ## Documentation 📕
 
