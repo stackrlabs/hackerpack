@@ -5,6 +5,7 @@ import { ActionLogs } from "@/components/action-logs";
 import { Button } from "@/components/ui/button";
 import { useAction } from "@/hooks/useAction";
 import { usePrivy } from "@privy-io/react-auth";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -48,11 +49,7 @@ export default function Home() {
   };
 
   const renderBody = () => {
-    if (!ready) {
-      return <p>Loading...</p>;
-    }
-
-    if (!authenticated) {
+    if (ready && !authenticated) {
       return <Button onClick={login}>Connect Wallet to interact</Button>;
     }
 
@@ -74,6 +71,41 @@ export default function Home() {
     );
   };
 
+  const renderLinks = () => {
+    return (
+      <div>
+        For inspiration on how to use this starter, check these out:
+        <li>
+          <Link
+            className="text-blue-500 hover:underline"
+            href="https://docs.stf.xyz/build/guides/community-examples"
+            target="_blank"
+          >
+            Community Examples
+          </Link>
+        </li>
+        <li>
+          <Link
+            className="text-blue-500 hover:underline"
+            href="https://github.com/aashutoshrathi/awesome-micro-rollups"
+            target="_blank"
+          >
+            awesome-micro-rollups
+          </Link>
+        </li>
+        <li>
+          <Link
+            className="text-blue-500 hover:underline"
+            href="https://docs.stf.xyz"
+            target="_blank"
+          >
+            Official Documentation
+          </Link>
+        </li>
+      </div>
+    );
+  };
+
   return (
     <main className="flex m-auto w-full h-full px-4">
       <div className="flex flex-col gap-4 flex-1">
@@ -82,6 +114,7 @@ export default function Home() {
           <code className="mx-4">{fetching ? "..." : value}</code>
         </p>
         <div className="flex gap-4">{renderBody()}</div>
+        <div>{renderLinks()}</div>
       </div>
       <ActionLogs />
     </main>
