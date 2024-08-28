@@ -74,7 +74,7 @@ This repo has been setup with [Privy](https://www.privy.io/), and we have includ
   </thead>
   <tbody>
     <tr>
-      <td>Embedded Wallet with Custodial wallet Auth</td>
+      <td>Embedded Wallet with non-custodial wallet Auth</td>
       <td>Uses Privy's embedded wallet to sign transactions (signing pop-up can be suppressed)</td>
       <td><a href="https://github.com/stackrlabs/hackerpack/" target="_blank">main</a></td>
       <td><a href="https://main.hackerpack.stf.xyz" target="_blank">Try it</a></td>
@@ -86,10 +86,10 @@ This repo has been setup with [Privy](https://www.privy.io/), and we have includ
       <td><a href="https://social.hackerpack.stf.xyz" target="_blank">Try it</a></td>
     </tr>
     <tr>
-      <td>Using Custodial wallet</td>
+      <td>Using non-custodial wallet</td>
       <td>Uses your wallet to sign transactions (requires pop-up)</td>
-      <td><a href="https://github.com/stackrlabs/hackerpack/tree/custodial" target="_blank">custodial</a></td>
-      <td><a href="https://custodial.hackerpack.stf.xyz" target="_blank">Try it</a></td>
+      <td><a href="https://github.com/stackrlabs/hackerpack/tree/non-custodial" target="_blank">non-custodial</a></td>
+      <td><a href="https://non-custodial.hackerpack.stf.xyz" target="_blank">Try it</a></td>
     </tr>
   </tbody>
 </table>
