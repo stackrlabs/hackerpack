@@ -65,13 +65,13 @@ Checkout our [docs](https://docs.stf.xyz) to learn more about Micro-rollups, the
 This repo has been setup with [Privy](https://www.privy.io/), and we have included three modes of wallet setups:
 | Mode | Description | Branch | Deployment |
 | --- | --- | --- | --- |
-| Embedded Wallet with Custodial wallet Auth | Uses Privy's embedded wallet to sign transactions (signing pop-up can be suppressed) | [`main`](https://github.com/stackrlabs/hackerpack/) | [Try it](https://main.hackerpack.stf.xyz) |
+| Embedded Wallet with non-custodial wallet Auth | Uses Privy's embedded wallet to sign transactions (signing pop-up can be suppressed) | [`main`](https://github.com/stackrlabs/hackerpack/) | [Try it](https://main.hackerpack.stf.xyz) |
 | Embedded Wallet with Social/Email Auth | Uses Privy's embedded wallet to sign transactions (signing pop-up can be suppressed) | [`social`](https://github.com/stackrlabs/hackerpack/tree/social) | [Try it](https://social.hackerpack.stf.xyz) |
-| Using Custodial wallet | Uses your wallet to sign transactions (requires pop-up) | [`custodial`](https://github.com/stackrlabs/hackerpack/tree/custodial) | [Try it](https://custodial.hackerpack.stf.xyz) |
+| Using non-custodial wallet | Uses your wallet to sign transactions (requires pop-up) | [`non-custodial`](https://github.com/stackrlabs/hackerpack/tree/non-custodial) | [Try it](https://non-custodial.hackerpack.stf.xyz) |
 
 ## Hosting ☁️
 
-- Frontend: You can deploy the NextJS application to Vercel, Netify, [GitHub Pages](https://www.freecodecamp.org/news/how-to-deploy-next-js-app-to-github-pages/) or even other providers like [AWS Amplify](https://aws.amazon.com/amplify/) etc.
+- Frontend: You can deploy the NextJS application to Vercel, Netlify, [GitHub Pages](https://www.freecodecamp.org/news/how-to-deploy-next-js-app-to-github-pages/) or even other providers like [AWS Amplify](https://aws.amazon.com/amplify/) etc.
 
 - Micro-rollup: We have extensive guide [here](https://docs.stf.xyz/build/guides/hosting)
 
