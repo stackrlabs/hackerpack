@@ -15,11 +15,10 @@ export const useAction = () => {
     }
 
     const inputs = { ...payload };
-    const { transitionToSchema, domain, schemas } = mruInfo;
+    const { domain, schemas } = mruInfo;
     const msgSender = user.wallet.address;
 
-    const schemaName = transitionToSchema[name];
-    const schema = schemas[schemaName];
+    const schema = schemas[name];
 
     const signature = await signTypedData({
       domain,
