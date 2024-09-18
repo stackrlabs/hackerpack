@@ -24,7 +24,10 @@ export const useAction = () => {
       domain,
       types: schema.types,
       primaryType: schema.primaryType,
-      message: inputs,
+      message: {
+        name,
+        inputs,
+      },
     });
 
     addLog({
@@ -40,7 +43,7 @@ export const useAction = () => {
       const response = await submitAction(name, {
         msgSender,
         signature,
-        inputs,
+        inputs
       });
 
       addLog({
