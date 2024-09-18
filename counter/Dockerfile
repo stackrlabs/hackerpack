@@ -1,9 +1,6 @@
-FROM node:lts-bookworm-slim
+FROM node:20-alpine
 
 RUN npm install -g npm@latest
-
-# Install bun globally
-RUN npm install -g bun
 
 WORKDIR /app
 
