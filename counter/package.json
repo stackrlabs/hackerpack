@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "start": "tsx src/index.ts",
-    "test": "mocha tests/**/*.test.ts",
+    "test": "mocha --require tsx tests/**/*.test.ts",
     "lint": "eslint src --ext .ts"
   },
   "dependencies": {
