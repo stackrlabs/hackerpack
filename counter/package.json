@@ -3,8 +3,8 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "start": "bun run src/index.ts",
-    "test": "mocha --require ts-node/register src/**/*.test.ts",
+    "start": "tsx src/index.ts",
+    "test": "mocha tests/**/*.test.ts",
     "lint": "eslint src --ext .ts"
   },
   "dependencies": {
@@ -20,9 +20,10 @@
     "@types/mocha": "^10.0.6",
     "@typescript-eslint/eslint-plugin": "^8.4.0",
     "@typescript-eslint/parser": "^8.4.0",
-    "bun-types": "latest",
     "chai": "^5.1.0",
     "eslint": "^8.57.0",
+    "mocha": "^10.7.3",
+    "tsx": "^4.19.1",
     "typescript-eslint": "^8.4.0"
   },
   "peerDependencies": {

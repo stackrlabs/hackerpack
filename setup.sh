@@ -3,14 +3,14 @@
 npx rimraf .git
 git init
 
-bun i
+npm i
 
 cd web
 # Update the .env file with your own values
 cp .env.example .env
-bun i
+npm i
 
 cd ../counter
 # Update Micro-rollup .env file with your own values
 cp .env.example .env
-bun i
+npm i
