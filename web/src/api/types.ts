@@ -21,7 +21,6 @@ export interface Domain {
 export interface MRUInfo {
   isSandbox: boolean;
   domain: Domain;
-  transitionToSchema: Record<string, string>;
   schemas: {
     [key: string]: Schema;
   };

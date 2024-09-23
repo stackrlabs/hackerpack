@@ -18,8 +18,8 @@
 
 Below are the requirements to get started with the pack:
 
+- [Bun](https://bun.sh) - we leverage Bun's bundler to build our micro-rollups.
 - [Node (LTS)](https://nodejs.org/en/download/)
-- [npm](https://github.com/npm/cli)
 - [Git](https://git-scm.com/downloads)
 
 ## Get Started

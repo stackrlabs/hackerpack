@@ -21,12 +21,11 @@ export const useAction = () => {
     }
 
     const inputs = { ...payload };
-    const { transitionToSchema, domain, schemas } = mruInfo;
+    const { domain, schemas } = mruInfo;
     // To get correct checksum address
     const msgSender = getAddress(address);
 
-    const schemaName = transitionToSchema[name];
-    const schema = schemas[schemaName];
+    const schema = schemas[name];
 
     let signature;
     try {
@@ -34,7 +33,7 @@ export const useAction = () => {
         domain,
         primaryType: schema.primaryType,
         types: schema.types,
-        message: inputs,
+        message: { name, inputs },
         account: msgSender,
       });
     } catch (e) {
