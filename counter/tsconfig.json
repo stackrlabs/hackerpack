@@ -18,7 +18,7 @@
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
     "types": [
-      "mocha"
+      "bun-types" // add Bun global
     ]
   },
   "include": [

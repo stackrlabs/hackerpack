@@ -1,8 +1,9 @@
 import { ActionConfirmationStatus } from "@stackr/sdk";
+import { EIP712Types } from "@stackr/sdk/machine";
 import express, { Request, Response } from "express";
+
 import { counterMachine } from "./stackr/machine";
 import { mru } from "./stackr/mru";
-import { schemas } from "./stackr/schemas";
 import { transitions } from "./stackr/transitions";
 
 const PORT = 3210;
@@ -27,21 +28,21 @@ export async function setupServer() {
     throw new Error("Machine not found");
   }
 
-  const transitionToSchema = getStfSchemaMap();
-
   /** Routes */
   app.get("/info", (_req: Request, res: Response) => {
     res.send({
       isSandbox: config.isSandbox,
       domain: config.domain,
-      transitionToSchema,
-      schemas: Object.values(schemas).reduce((acc, schema) => {
-        acc[schema.identifier] = {
-          primaryType: schema.EIP712TypedData.primaryType,
-          types: schema.EIP712TypedData.types,
-        };
-        return acc;
-      }, {} as Record<string, any>),
+      schemas: Object.entries(getStfSchemaMap()).reduce(
+        (acc, [transition, types]) => {
+          acc[transition] = {
+            primaryType: 'Action',
+            types,
+          };
+          return acc;
+        },
+        {} as Record<string, { primaryType: string; types: EIP712Types }>
+      ),
     });
   });
 
@@ -56,22 +57,12 @@ export async function setupServer() {
     try {
       const { msgSender, signature, inputs } = req.body;
 
-      const schemaId = transitionToSchema[transition];
-      const schema = Object.values(schemas).find(
-        (schema) => schema.identifier === schemaId
-      );
-
-      if (!schema) {
-        throw new Error("NO_SCHEMA_FOUND");
-      }
-
-      const signedAction = schema.actionFrom({
-        msgSender,
+      const ack = await submitAction({
+        name: transition,
         signature,
         inputs,
+        msgSender,
       });
-
-      const ack = await submitAction(transition, signedAction);
       const { logs, errors } = await ack.waitFor(ActionConfirmationStatus.C1);
       if (errors?.length) {
         throw new Error(errors[0].message);
