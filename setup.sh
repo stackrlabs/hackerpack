@@ -1,7 +1,7 @@
 #!/bin/bash
 # Setup fresh git repo
-# npx rimraf .git
-# git init
+npx rimraf .git
+git init
 
 npm i
 
