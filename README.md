@@ -44,7 +44,7 @@ cd hackerpack
 3. Run the project with `mprocs`
 
 ```bash
-bun dev
+npm run dev
 ```
 
 This sets up the micro-rollup and the web app to run concurrently. You can now visit `http://localhost:3000` to see the web app in action and interact with the rollup by sending actions.
