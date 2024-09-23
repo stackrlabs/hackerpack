@@ -36,7 +36,7 @@ export async function setupServer() {
       schemas: Object.entries(getStfSchemaMap()).reduce(
         (acc, [transition, types]) => {
           acc[transition] = {
-            primaryType: transition,
+            primaryType: 'Action',
             types,
           };
           return acc;
