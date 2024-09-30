@@ -1,3 +1,4 @@
+// Docs: https://docs.stf.xyz/build/framework/config
 import { DA, KeyPurpose, SignatureScheme, StackrConfig } from "@stackr/sdk";
 import dotenv from "dotenv";
 
